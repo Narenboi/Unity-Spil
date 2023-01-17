@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7302244999663961626}
   - component: {fileID: 7302244999663961629}
   m_Layer: 6
-  m_Name: Moving Platforms
+  m_Name: Moving Platforms_lucas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
