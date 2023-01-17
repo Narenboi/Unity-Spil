@@ -5,8 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Cherry
-  - Trap
-  - enemy
+  - trap
   layers:
   - Default
   - TransparentFX
@@ -14,7 +13,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
+  - ground
   - 
   - 
   - 
@@ -41,24 +40,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: "totaltotalbaggrund\xA8"
-    uniqueID: 2581418715
+  - name: background
+    uniqueID: 272739411
     locked: 0
-  - name: totalbackground
-    uniqueID: 3605253401
-    locked: 1
-  - name: forbaggrund
-    uniqueID: 3355258449
-    locked: 0
-  - name: Background
-    uniqueID: 3084503975
+  - name: HOUSE
+    uniqueID: 4200079257
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Terain
-    uniqueID: 1769891307
-    locked: 0
-  - name: Player
-    uniqueID: 1416224545
+  - name: terrain
+    uniqueID: 2603981749
     locked: 0

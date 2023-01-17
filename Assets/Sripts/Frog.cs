@@ -22,8 +22,9 @@ public class Frog : EnemyScript
     // Update is called once per frame
     void Update()
     {
-       if (enemyAnim.GetBool("falling") == true )
+        if (enemyAnim.GetBool("jumping") == false && enemyAnim.GetBool("falling") == false)
         {
+
         
             if (enemyRb.velocity.y <0.1f)
             {

@@ -7,15 +7,9 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"last_search.DA949528" = "sorting layer"
-	"OpenInspectorPreview.DA949528" = "0"
-	"currentGroup.DA949528" = "all"
-	"last_search.F8949528" = "sam"
-	"OpenInspectorPreview.F8949528" = "0"
-	"currentGroup.F8949528" = "asset"
-	"last_search.2138236A" = ""
-	"OpenInspectorPreview.2138236A" = "0"
-	"currentGroup.2138236A" = "asset"
+	"last_search.DD5CDD96" = "sample"
+	"OpenInspectorPreview.DD5CDD96" = "0"
+	"currentGroup.DD5CDD96" = "all"
 }
 providers = {
 	adb = {
@@ -62,8 +56,7 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
-	"t:M"
-	"t:Material"
+	"sample"
 ]
 searchItemFavorites = [
 ]
