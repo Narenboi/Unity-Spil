@@ -4,79 +4,74 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    private Rigidbody2D rb; 
     private BoxCollider2D coll;
-    private SpriteRenderer sprite;
     private Animator anim;
+    private SpriteRenderer sprite;
 
     [SerializeField] private LayerMask jumpableGround;
 
     private float dirX = 0f;
     [SerializeField] private float moveSpeed = 7f;
-    [SerializeField] private float jumpForce = 14f;
+    [SerializeField] private float jumpForce = 2f; 
 
-    private enum MovementState { idle, running, jumping, falling }
+    private enum MovementState { idle, running, jump, fall}
+    [SerializeField] private AudioSource jumpSoundEffect; 
 
+    // Start is called before the first frame update
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        coll = GetComponent<BoxCollider2D>();
-        anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-
+        coll = GetComponent<BoxCollider2D>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
-
-
+    // Update is called once per frame
     private void Update()
     {
-        dirX = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        dirX = Input.GetAxisRaw ("Horizontal");
+        rb.velocity = new Vector2 (dirX * moveSpeed, rb.velocity.y);
 
-
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if  (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-
-
+            jumpSoundEffect.Play();
+            rb.velocity = new Vector2 (rb.velocity.x ,jumpForce);
         }
         UpdateAnimationState();
-
     }
-    private void UpdateAnimationState()
+    private void UpdateAnimationState() 
     {
-        MovementState state;
-
-        if (dirX > 0f)
+        MovementState State;
+        if (dirX > 0f) 
         {
-            state = MovementState.running;
-            sprite.flipX = false;
+            State = MovementState.running;        
+            sprite.flipX = false; 
         }
         else if (dirX < 0f)
         {
-            state = MovementState.running;
-            sprite.flipX = true;
+            State = MovementState.running;        
+            sprite.flipX = true; 
         }
         else
         {
-            state = MovementState.idle;
+            State = MovementState.idle;        
+        } 
 
-        }
-
-        if (rb.velocity.y > .1f)
+        if(rb.velocity.y > .1f)
         {
-            state = MovementState.jumping;
+            State = MovementState.jump; 
         }
         else if (rb.velocity.y < -.1f)
         {
-            state = MovementState.falling;
+            State = MovementState.fall;
         }
 
-        anim.SetInteger("state", (int)state);
+        anim.SetInteger("State", (int)State); 
     }
 
     private bool IsGrounded()
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+      return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround );
     }
 
-}
+} 

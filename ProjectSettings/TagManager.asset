@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cherry
   - Trap
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -40,12 +41,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: BackGround
-    uniqueID: 1484388743
+  - name: "totaltotalbaggrund\xA8"
+    uniqueID: 2581418715
+    locked: 0
+  - name: totalbackground
+    uniqueID: 3605253401
+    locked: 1
+  - name: forbaggrund
+    uniqueID: 3355258449
+    locked: 0
+  - name: Background
+    uniqueID: 3084503975
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Terrain
-    uniqueID: 750099567
+  - name: Terain
+    uniqueID: 1769891307
+    locked: 0
+  - name: Player
+    uniqueID: 1416224545
     locked: 0
